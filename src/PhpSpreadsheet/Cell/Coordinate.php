@@ -29,7 +29,7 @@ abstract class Coordinate
      */
     public static function coordinateFromString($pCoordinateString)
     {
-        if (preg_match('/^([$]?[A-Z]{1,3})([$]?\\d{1,7})$/', $pCoordinateString, $matches)) {
+        if (preg_match('/^([$]?[a-zA-Z]{1,3})([$]?\\d{1,7})$/', $pCoordinateString, $matches)) {
             return [$matches[1], $matches[2]];
         } elseif (self::coordinateIsRange($pCoordinateString)) {
             throw new Exception('Cell coordinate string can not be a range of cells');
